@@ -11,17 +11,26 @@ on:
       - opened
       - synchronize
 jobs:
+#   boost-sast:
+#     name: SAST
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Brakeman
+#         uses: boostsecurityio/boostsec-scanner-github@v4
+#         with:
+#           api_token: ${{ secrets.BOOST_API_KEY }}
+#           registry_module: boostsecurityio/brakeman
   boost-sast-dev:
-    name: SAST
+    name: SAST (Dev)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Brakeman
         uses: boostsecurityio/boostsec-scanner-github@v4
-        env:
-          BOOST_SCANNER_REGISTRY_REPO: https://github.com/boostsecurityio/scanner-registry.git#brakeman/align-cwe-casing-and-fix-ruleid-in-sarif
         with:
-          api_token: ${{ secrets.BOOST_API_KEY }}
+          api_endpoint: https://api.dev.boostsec.io
+          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
           registry_module: boostsecurityio/brakeman
-          log_level: DEBUG
