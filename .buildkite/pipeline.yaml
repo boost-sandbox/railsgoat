@@ -1,0 +1,7 @@
+agents:
+  - "queue=demo"
+steps:
+  - label: "boostsecurity scanner"
+    plugins:
+      - boostsecurityio/boostsec-scanner#v4:
+          registry_module: scanners/boostsecurityio/native-scanner
