@@ -5,3 +5,4 @@ steps:
     plugins:
       - boostsecurityio/boostsec-scanner#v4:
           registry_module: boostsecurityio/brakeman
+
