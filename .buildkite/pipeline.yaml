@@ -1,5 +1,3 @@
-agents:
-  - "queue=demo"
 steps:
   - label: "boostsecurity scanner"
     plugins:
