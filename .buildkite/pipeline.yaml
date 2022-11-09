@@ -1,6 +1,7 @@
 env:
-#   SEMGREP_RULES: ".semgrep/"
-  SEMGREP_RULES: "https://raw.githubusercontent.com/boost-sandbox/railsgoat/master/.semgrep/rules.yaml"
+#   SEMGREP_RULES: "p/ruby"
+#   SEMGREP_RULES: "p/ruby .semgrep/"
+  SEMGREP_RULES: "p/ruby https://raw.githubusercontent.com/boost-sandbox/railsgoat/master/.semgrep/rules.yaml"
 steps:
   - label: "boostsecurity scanner"
     plugins:
